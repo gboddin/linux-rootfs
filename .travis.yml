@@ -8,7 +8,6 @@ env:
     - DISTRO=debian:wheezy
     - DISTRO=debian:stretch
     - DISTRO=centos:7
-    - DISTRO=pritunl/archlinux:latest
 services:
   - docker
 script:
