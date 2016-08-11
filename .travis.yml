@@ -3,8 +3,12 @@ env:
     - DISTRO=centos:6.7
     - DISTRO=ubuntu:trusty
     - DISTRO=ubuntu:xenial
+    - DISTRO=ubuntu:precise
+    - DISTRO=ubuntu:vivid
     - DISTRO=debian:wheezy
+    - DISTRO=debian:stretch
     - DISTRO=centos:7
+    - DISTRO=pritunl/archlinux:latest
 services:
   - docker
 script:
