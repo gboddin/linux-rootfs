@@ -8,6 +8,8 @@ env:
     - DISTRO=debian:wheezy
     - DISTRO=debian:stretch
     - DISTRO=centos:7
+    - DISTRO=fedora:23
+    - DISTRO=fedora:24
 services:
   - docker
 script:
