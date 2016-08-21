@@ -1,6 +1,6 @@
 env:
   matrix:
-    - DISTRO=centos:6.7
+    - DISTRO=centos:6.8
     - DISTRO=ubuntu:trusty
     - DISTRO=ubuntu:xenial
     - DISTRO=ubuntu:precise

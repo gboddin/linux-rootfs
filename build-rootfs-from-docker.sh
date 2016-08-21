@@ -4,7 +4,7 @@ while (($#)); do
   echo "Pulling distro $1 from docker registry"
   docker pull $1
   echo "Creating docker container from $1"
-  ID=$(docker create $1)
+  ID=$(docker create $1 /bin/bash -l)
   echo "Exporting docker container $ID to $TAR ..."
   docker export -o "$TAR" "$ID"
   echo "Compressing $TAR ..."
