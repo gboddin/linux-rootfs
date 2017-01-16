@@ -15,13 +15,13 @@ services:
 script:
   - ./build-rootfs-from-docker.sh ${DISTRO}
 after_success:
-  - ls -lha *.tar.bz2
-  - export RELEASE_FILE=$(ls -lha *.tar.bz2)
+  - ls -lha
 deploy:
   skip_cleanup: true
   provider: releases
   api_key:
-    secure: i57P5d4jVXU2PoERLCRuao5hOEDx+jy8+69ei0J9pyZr5AIZdtFA90aClxQwK9zOAHitMLdlry+nJfIgEV8ueUDeGkNp458Ybz86Qx++TdIT/W2/t7srLjZIzJmYgedcyarkmmJ4e1TXjKzZ8/Hja7vTqgafOXfoFAaF5gPmQJjoNvZNJI89lgoZ1CDEk45fDlhU7hsEfMZKwMcixogfQOfmzguDtVRRNi5CktrzwqxIiXEOJuFceTPuNCJVWU45zXm2OJZv5hnzHn09KRJNKawo1CZXTqxu6cgYQKWYuYIh0cuWtJ8c2BHcEFMBubzdJfyJKVKTVLISmoeXt5loljt2/C1BGVrvANkzDklpYdND65qSG8M5rHtjG5CTZlUJVencznzzq7ys5BSi0OZ68GBzUQkfeLpJ9IMoiIoZegoE/+d8OahLevH/p/9upwGS/V3iltizQvZzZGsRROhMgq+NOG4iT+kvV7BMTbpajQZq+ZntoPjTEg7XjBmSD+luG97v6xFTwZDUU0tFutLhf7mc0v10mn16EpShSOV85YZm8clppcDJ+6seyfcN4W8x9rtMzHwV27JzNDbB8yGdK7RVpxEhASzOEOfAQjtFTD3mV5mlZw43SATVwFHSY36EtELWxj9mukj92qne5gUUPJIOjyuaomcoA6TBSEs6WNE=
-  file: ${RELEASE_FILE} 
+    secure: pMhqjAZTD1tZgRRX64Gu08fM4ySrQsSWLn2bcxP/hoFQyYMLNjFgQ1fQGLpgjYl4PBphvHAqN4u2njMRJ9dUjgkbZ2kjyFdwkl3BKT7aeii6wEJIAujnc6LRfPVU2wPdHoDBLlNRQHDmYx9ty5YAx3q0wvSCQjLfUb+/rve860SmjE1cQUTFByhzZFY4q3z87kLjL8E/m4tHHfZsrgIxbSIj4Q41EPWGtCql+PGlFZbiFBLW7v4lyF3rTsqEo0d6HhO19ErorG24ro3IkcrhTtqYOdQ7nsAYU++WeJw7pq4yFxoPj2VGSvyME2s1Vp+6NTbTr+bQwa9fZ1lP3CvKcsiv67tiY7X784QxYmV2gvK+TQwfc955npDLbR2kDR06N3fy5vrv6COa4jiQVlzv97lk5qxcLeOL3+SPmfL2qbS68m7ZSdsQ46ZVWDQlH6q/Cv9T1Tq3iPXM1Wp51Ws2Cx5Vpm/YxlFkHeCvmp4SLnVtcrcG2vv+cY1zP3XiMmgNuwlQb3jLkdaq4dOd1sQ70cssQUQRIDaEKEE6MT0F5oNLhA9vgFOyMQvDAi3yTk32GHWk4MW+INFclAg4uLMkw5dCSGrHJ7WoFoBIflvNHrg8o7ifiwQ+puVctftzUzBpeS9ZY/gyReS5CZ1WiIPYP/kSj7do8YKEgGSdWrwkcvs=
+  file_glob: true
+  file: ${HOME}/build/${TRAVIS_REPO_SLUG}/*.bz2
   on:
     tags: true
